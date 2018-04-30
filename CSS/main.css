@@ -2,24 +2,21 @@ body {
 
     font-family: 'Ubuntu', sans-serif;
 
-    
+    /* background: #00d2ff;  /* fallback for old browsers */
+    /* background: -webkit-linear-gradient(to right, #928DAB, #00d2ff);  /* Chrome 10-25, Safari 5.1-6 */
+    /* background: linear-gradient(to right, #928DAB, #00d2ff); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-    background: #00d2ff;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #928DAB, #00d2ff);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #928DAB, #00d2ff); /*W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-image: url("footer_lodyas.png");
 
+    height: auto;
 
+    text-align: center;
+		
+		
 
 }
 
-input[type="text"] {
-    border: none;
-    border-bottom: 1px solid #6C757D;
-}
-
-#submit {
-    margin: 30px 0;
-}
+/* MAIN DIV CSS */
 
 div#main {
     -o-box-shadow:3px 3px 3px 3px rgba(0, 0, 0, 0.5);
@@ -28,29 +25,184 @@ div#main {
     box-shadow:3px 3px 3px 3px rgba(0, 0, 0, 0.5) ;
     background-color: white;
 
-    border-left: 10px solid rgba(0, 0, 0, 0.8);
+    border-top: 15px solid #dc3545;
+    font-family: 'Oswald', sans-serif;
     
     margin-top: 50px;
     padding-top: 30px;
-    text-align:center;
+
+
+    max-width: 30%;
+}
+
+/* improve ui on smaller devices by overwriting max-width : 30% */
+
+@media all and (max-width : 768px) {
+
+    div#main {
+        min-width: 50%;
+        max-width: 80%;
+    }
+}
+
+/* fix for todo count badge overlaping with table and h2 */
+
+@media all and (max-width: 425px) {
+    span.badge {
+
+        position: relative;
+        bottom: -70px;
+    }
+
+    table {
+       position: relative;
+       bottom: -50px;
+    }
+}
+input[type="text"] {
+    border: none;
+    border-bottom: 1px solid #6C757D;
+
+}
+
+
+#submit {
+    margin: 30px 0;
+    cursor: not-allowed;
+}
+
+div.input-div {
+
+    text-align: center;
+}
+
+form {
+
+    padding: 20px;
+}
+
+h2 {
+    font-family: "Righteous", sans-serif;
+    font-size: 4em;
+    color: #fff;
+    line-height: 1.5px;
+    letter-spacing: 1.5px;
+    margin: 30px auto;
+    padding: 25px 0;
+
+}
+
+hr {
+    background-color: #fff;
+    width: 30%;
+
+}
+
+
+
+/* TABLE CSS */
+
+table {
+    font-family: 'Oswald', sans-serif;
+    -o-box-shadow:3px 3px 3px 3px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow:3px 3px 3px 3px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow:3px 3px 3px 3px rgba(0, 0, 0, 0.5);
+    box-shadow:3px 3px 3px 3px rgba(0, 0, 0, 0.5);
+
+
+
+}
+
+table td {
+    text-align: center;
+}
+
+/* Font Awesome icon styling */
+
+
+
+.fa-edit, .fa-times {
+    opacity: 0.6;
     
-
-
 }
 
-body > div {
-
-    margin-top: 25px;
+.fa-edit:hover , .fa-times:hover {
+    opacity: 1;
+    cursor: pointer;
 }
 
-div.alert {
-    color: #000;
 
-    -o-box-shadow:0px 1px 3px 3px rgba(0, 0, 0, 0.3);
-    -moz-box-shadow:0px 1px 3px 3px rgba(0, 0, 0, 0.3);
-    -webkit-box-shadow:0px 1px 3px 3px rgba(0, 0, 0, 0.3);
-    box-shadow:0px 1px 3px 3px rgba(0, 0, 0, 0.3) ;
-
-    border-top-right-radius: 5%;
-    border-bottom-right-radius: 5%;
+.fa-edit:hover {
+    color: #ffc107;
 }
+
+.fa-times:hover {
+    color: #dc3545;
+}
+
+/* SORT INPUT CSS */
+
+div#sort-items {
+
+    width: 30%;
+    margin-bottom: 20px;
+    margin-left: 70%;
+    color: #fff;
+}
+
+div.custom-control {
+    margin-left: 10px;
+}
+
+/* FOOTER CSS */
+
+footer {
+
+	width: 100%;
+	height: 100px;
+    margin-top: 50px;
+    margin-bottom: 0;
+}
+
+footer ul {
+    display: flex;
+	justify-content: center;
+    padding: 0;
+    flex-direction: row;
+    list-style-type: none;
+}
+
+footer hr {
+	width: 75%;
+}
+
+footer ul li {
+    color: #fff;
+    padding: 0 10px;
+    opacity: 0.6;
+}
+
+footer span {
+	font-family: "Nono Sans", sans-serif;
+	font-size: 0.75em;
+	color: #b7b3b6;
+}
+
+footer span a {
+	text-decoration: none;
+	color: rgba(0, 0, 0, 0.5);
+}
+
+footer span a:hover {
+    text-decoration: underline;
+    color: #fff;
+	opacity: 1;
+}
+
+
+footer ul li:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+

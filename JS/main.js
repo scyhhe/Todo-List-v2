@@ -248,8 +248,7 @@ $('tbody').on('click', '[data-fa-i2svg]', function(e) {
  
   } else if (target.hasClass('fa-edit')) {
 
-    console.log(targetId);
-
+  
     
 
     swal({
@@ -261,9 +260,15 @@ $('tbody').on('click', '[data-fa-i2svg]', function(e) {
     }).then(value => {
       if (!value) {
         throw null;
-      }
+      } else if (value.trim().length < 3 || format.test(value)) {
 
-      console.log(value);
+        swal({
+          title: "Try again.",
+          text: "All whitespace strings and special characters are not allowed. Please enter at least three VALID characters",
+          icon: "warning",
+        });
+      
+      } else {
 
       $.ajax({
         type: 'POST',
@@ -275,13 +280,12 @@ $('tbody').on('click', '[data-fa-i2svg]', function(e) {
         success: function(response) {
 
           loadData();
-          
-          console.log(response);
 
           swal('Success!', { icon: 'success'});
           
         }
       })
+      }
     })
   }
 
@@ -301,23 +305,23 @@ $('#sort').on('change', function() {
 
 })
 
-// and descending sort functionality
-$('#descending').on('change', function() {
+// and descending sort functionality - has some annoying bug atm so its disabled
+// $('#descending').on('change', function() {
 
-  let sortMethod = $('#sort').val();
+//   let sortMethod = $('#sort').val();
 
-  console.log('onChange alert. Current sort method is ' + sortMethod);
+//   console.log('onChange alert. Current sort method is ' + sortMethod);
 
-  if ( $(this).prop("checked") ) {
+//   if ( $(this).prop("checked") ) {
 
-    loadData(sortMethod, true);
+//     loadData(sortMethod, true);
   
-  } else {
+//   } else {
     
-    loadData(sortMethod);
+//     loadData(sortMethod);
   
-  }
-})
+//   }
+// })
 
 // Add AJAX call to flush db when user closes the page .... TODO : flush DB even if user follows a link / redirects to another page
 

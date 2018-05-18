@@ -323,10 +323,10 @@ $('#sort').on('change', function() {
 //   }
 // })
 
-// Add AJAX call to flush db when user closes the page .... TODO : flush DB even if user follows a link / redirects to another page
+// Add AJAX call to flush db when user closes the page OR redirects
 
 
-$(window).on('beforeunload', function() {
+$(window).on('beforeunload unload', function() {
   $.ajax({
     url: 'dbflush.php',
     type: 'POST'
